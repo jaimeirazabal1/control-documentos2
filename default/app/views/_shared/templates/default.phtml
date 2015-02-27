@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv='Content-type' content='text/html; charset=<?php echo APP_CHARSET ?>' />
+  <title>Kumbia-librerias-acl</title>
+  <?php Tag::css("bootstrap/css/bootstrap.min") ?>
+  <?php Tag::css("datatable/css/datatable.bootstrap") ?>
+  <?php echo Html::includeCss() ?>
+  <?php echo Tag::js("jquery/jquery.min") ?>
+  <?php echo Tag::js("jquery/jquery.kumbiaphp") ?>
+  <?php echo Tag::js("bootstrap/js/bootstrap.min") ?>
+  <?php echo Tag::js("file-style") ?>
+  <?php echo Tag::js("datatable/js/jquery.dataTables") ?>
+  <?php echo Tag::js("datatable/js/datatable.bootstrap") ?>
+  <?php echo Tag::js("tinymce/tinymce.min") ?>
+  <script type="text/javascript">
+  
+  $(document).ready(function(){
+  	$(":file").filestyle({input: false,buttonText: " &nbsp;Encuentra el Documento"});
+    $(".table").DataTable({
+        "language": {
+          "sProcessing":    "Procesando...",
+          "sLengthMenu":    "Mostrar _MENU_ registros",
+          "sZeroRecords":   "No se encontraron resultados",
+          "sEmptyTable":    "Ningún dato disponible en esta tabla",
+          "sInfo":          "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+          "sInfoEmpty":     "Mostrando registros del 0 al 0 de un total de 0 registros",
+          "sInfoFiltered":  "(filtrado de un total de _MAX_ registros)",
+          "sInfoPostFix":   "",
+          "sSearch":        "Buscar:",
+          "sUrl":           "",
+          "sInfoThousands":  ",",
+          "sLoadingRecords": "Cargando...",
+          "oPaginate": {
+              "sFirst":    "Primero",
+              "sLast":    "Último",
+              "sNext":    "Siguiente",
+              "sPrevious": "Anterior"
+          },
+          "oAria": {
+              "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+              "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+          }
+      }
+    });
+  })
+  </script>
+</head>
+<body>
+  <div id='content'>
+    <?php View::content(); ?>
+  </div>
+</body>
+</html>

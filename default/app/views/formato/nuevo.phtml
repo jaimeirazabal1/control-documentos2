@@ -1,0 +1,21 @@
+<div class="container">
+	<br>
+	<?php View::content() ?>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Nuevo Formato</h3>
+			<small>El formato sera de esta manera:</small>
+		</div>
+		<div class="panel-body">
+			<?php echo Form::openMultipart() ?>
+		    <div class="form-group">
+		    	<label for="">Ingrese un archivo .doc ó .docx:</label>
+			    <?php echo Form::file('archivo') ?>
+			    <?php echo Form::hidden('oculto', "class='filestyle'", '1') //para saber si se envió el form ?>
+		    </div>
+		    <?php echo Form::submit('subir',"class='btn btn-success btn-xs'") ?>
+		<?php echo Form::close() ?>
+		</div>
+	</div>
+	<?php echo Html::link("formato/ver","Ver Formatos") ?>
+</div>

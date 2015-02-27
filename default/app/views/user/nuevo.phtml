@@ -1,0 +1,24 @@
+<div class="container">
+	<br>
+	<?php View::content() ?>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Nuevo Usuario</h3>
+	  </div>
+	  <div class="panel-body">
+	    <?php echo Form::open() ?>
+		<div class="form-group">
+			<label for="">Email:</label>
+			<input type="email" name="user[email]" class="form-control" placeholder="Email...">		
+		</div>
+		<div class="form-group">
+			<label for="">Contraseña:</label>
+			<input type="password" name="user[pass]" class="form-control" placeholder="Contraseña...">	
+			<input type="password" name="user[repass]" class="form-control" placeholder="Repetir Contraseña...">
+		</div>			
+		<input type="submit" value="Crear" class="btn btn-success btn-xs">
+		<?php echo Html::link("sesion/login","Iniciar Sesión","class='btn btn-info btn-xs'")?>
+		<?php echo Form::close() ?>
+	  </div>
+	</div>
+</div>

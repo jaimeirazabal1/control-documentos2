@@ -1,0 +1,27 @@
+<div class="container">
+	<br>
+	<?php View::content() ?>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Formatos</h3>
+		</div>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<th>Documento</th>
+					<th>Tipo de Documento</th>
+					<th>-</th>
+				</thead>
+				<?php for ($i=0;$i<count($archivos);$i++): ?>
+					<tr>
+						<td><?php print_r($archivos[$i]) ?></td>
+						<td><?php print_r($archivos[$i]) ?></td>
+						<td><?php echo Js::link("formato/eliminar/{$archivos[$i]}","<span class='glyphicon glyphicon-remove'></span>","Está Seguro?",null,"title='Eliminar?'")."  ".Html::link("formato/leer/{$archivos[$i]}","[Leer]")."  ".Html::link($path.$archivos[$i],"[Descargar]") ?></td>
+					</tr>
+				<?php endfor ?>
+			</table>
+		</div>
+	</div>
+	<?php echo Html::link("formato/nuevo","Agregar Nuevo Formato") ?> |
+	<?php echo Html::link("documento/crear","Crear Documento editor Online") ?>
+</div>

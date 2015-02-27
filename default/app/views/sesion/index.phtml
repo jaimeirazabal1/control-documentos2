@@ -1,0 +1,36 @@
+
+<?php echo Tag::css("datatable/css/jquery.dataTables"); ?>
+<?php echo Tag::css("datatable/css/datatable.bootstrap"); ?>
+<?php echo Tag::js("datatable/js/jquery.dataTables"); ?>
+<?php echo Tag::js("datatable/js/datatable.bootstrap"); ?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".table").DataTable();
+	})
+</script>
+<div class="container">
+	<br>
+	<?php View::content() ?>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Sesiones</h3>
+	  </div>
+	  <div class="panel-body">
+	    <table class="table">
+			<thead>
+				<th>Usuario</th>
+				<th>Fecha Entrada</th>
+				<th>Hora Salida</th>
+			</thead>
+			<?php foreach ($sesiones as $key => $value): ?>
+				<tr>
+					<td><?php echo $value->usuario ?></td>
+					<td><?php echo $value->fecha ?></td>
+					<td><?php echo $value->hora_salida ?></td>
+				</tr>
+			<?php endforeach; ?>
+		</table>
+	  </div>
+	</div>
+</div>
+
